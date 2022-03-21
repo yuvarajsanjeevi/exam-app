@@ -18,22 +18,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1")
 public class MessageController {
 
-    @GetMapping("/translate/number-to-word/{value}")
-    public TranslateResult doTranslate(@PathVariable Integer value) {
+    @GetMapping("/translate/number-to-word/{number}")
+    public TranslateResult doTranslate(@PathVariable Integer number) {
         return TranslateResult
                 .builder()
-                .id(value)
-                .name(IntToWord.translate(value))
+                .id(number)
+                .name(IntToWord.translate(number))
                 .build();
     }
 
-    @GetMapping("/say-hello/{value}")
-    public SayHelloResult sayHello(@PathVariable Integer value) {
+    @GetMapping("/say-hello/{noOfTimes}")
+    public SayHelloResult sayHello(@PathVariable Integer noOfTimes) {
 
         return SayHelloResult
                 .builder()
-                .id(value)
-                .result(SayHello.sayXHello(value))
+                .id(noOfTimes)
+                .result(SayHello.sayXHello(noOfTimes))
                 .build();
     }
 }
