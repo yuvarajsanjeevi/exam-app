@@ -1,9 +1,9 @@
 package com.example.demo.source.controller.v1;
 
-import com.example.demo.source.util.IntToWord;
-import com.example.demo.source.util.SayHello;
 import com.example.demo.source.dto.SayHelloResult;
 import com.example.demo.source.dto.TranslateResult;
+import com.example.demo.source.service.MessageService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,24 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("api/v1")
+@AllArgsConstructor
 public class MessageController {
 
+    private final MessageService messageService;
+
     @GetMapping("/translate/number-to-word/{number}")
-    public TranslateResult doTranslate(@PathVariable Integer number) {
-        return TranslateResult
-                .builder()
-                .id(number)
-                .name(IntToWord.translate(number))
-                .build();
+    public TranslateResult doTranslateNumberToWord(@PathVariable Integer number) {
+        return messageService.doTranslateNumberToWord(number);
     }
 
     @GetMapping("/say-hello/{noOfTimes}")
     public SayHelloResult sayHello(@PathVariable Integer noOfTimes) {
-
-        return SayHelloResult
-                .builder()
-                .id(noOfTimes)
-                .result(SayHello.sayXHello(noOfTimes))
-                .build();
+        return messageService.sayHello(noOfTimes);
     }
 }

@@ -34,6 +34,7 @@ public class CustomerServiceImpl implements CustomerService  {
                     .build();
             newCustomer = customerRepository.save(newCustomer);
             customerDTO.setId(newCustomer.getId());
+            customerDTO.setCreatedAt(newCustomer.getCreatedAt());
         } catch (DataAccessException dataAccessException) {
             log.error("Error while saving customer", dataAccessException);
            throw new RuntimeException("Unable to save customer");
