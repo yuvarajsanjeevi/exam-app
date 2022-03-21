@@ -1,9 +1,13 @@
 package com.example.demo.source;
 
+/**
+ * Added missing break for case 3
+ * removed not used defaultResponse
+ */
 public class IntToWord {
 
-    public static String Translate(Integer caseIndex) {
-        String defaultResponse = "";
+    public static String translate(Integer caseIndex) {
+        // String defaultResponse = "";
         String response = "";
 
         switch (caseIndex) {
@@ -18,6 +22,7 @@ public class IntToWord {
                 break;
             case 3:
                 response = "Three";
+                break;
             case 4:
                 response = "Four";
                 break;

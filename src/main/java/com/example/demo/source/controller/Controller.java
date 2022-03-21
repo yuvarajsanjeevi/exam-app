@@ -8,25 +8,32 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * changed url mapping
+ * renamed static method IntToWord.translate, SayHello.sayXHello
+ *
+ */
 @RestController
 public class Controller {
 
-    @GetMapping("/dotranslate/{value}")
+    @GetMapping("/translate/number-to-word/{value}")
     public TranslateResult doTranslate(@PathVariable Integer value) {
 
         TranslateResult result = new TranslateResult();
         result.setId(value);
-        result.setName(IntToWord.Translate(value));
+        // rename static method by convention
+        result.setName(IntToWord.translate(value));
 
         return result;
     }
 
-    @GetMapping("/sayhello/{value}")
-    public SayHelloResult sayhello(@PathVariable Integer value) {
+    @GetMapping("/say-hello/{value}")
+    public SayHelloResult sayHello(@PathVariable Integer value) {
 
         SayHelloResult result = new SayHelloResult();
         result.setId(value);
-        result.setResult(SayHello.SayXHello(value));
+        // rename static method by convention
+        result.setResult(SayHello.sayXHello(value));
 
         return result;
     }
