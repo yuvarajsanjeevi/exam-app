@@ -1,6 +1,6 @@
 package com.example.demo.source;
 
-public class SayhelloResult {
+public class SayHelloResult {
     private Integer id;
     private String result;
 

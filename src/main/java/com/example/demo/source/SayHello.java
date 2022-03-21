@@ -1,6 +1,6 @@
 package com.example.demo.source;
 
-public class Sayhello {
+public class SayHello {
 
     public static String SayXHello(Integer x) {
         String xHello = "";

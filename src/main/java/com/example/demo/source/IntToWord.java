@@ -1,6 +1,6 @@
 package com.example.demo.source;
 
-public class InttoWord {
+public class IntToWord {
 
     public static String Translate(Integer caseIndex) {
         String defaultResponse = "";
