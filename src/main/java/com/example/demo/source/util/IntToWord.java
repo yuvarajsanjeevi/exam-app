@@ -1,4 +1,4 @@
-package com.example.demo.source;
+package com.example.demo.source.util;
 
 /**
  * Added missing break for case 3
@@ -8,7 +8,7 @@ public class IntToWord {
 
     public static String translate(Integer caseIndex) {
         // String defaultResponse = "";
-        String response = "";
+        String response;
 
         switch (caseIndex) {
             case 0:

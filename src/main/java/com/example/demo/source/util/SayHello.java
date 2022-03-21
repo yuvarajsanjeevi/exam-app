@@ -1,4 +1,4 @@
-package com.example.demo.source;
+package com.example.demo.source.util;
 
 /**
  * rename static method name
