@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.source.Person;
-import com.example.demo.source.Personrepository;
+import com.example.demo.source.entity.Person;
+import com.example.demo.source.repository.PersonRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,8 +17,8 @@ public class DemoApplication {
 		//Use this for Test
 				ConfigurableApplicationContext configurableApplicationContext =
 						SpringApplication.run(DemoApplication.class, args);
-				Personrepository personRepository =
-						configurableApplicationContext.getBean(Personrepository.class);
+				PersonRepository personRepository =
+						configurableApplicationContext.getBean(PersonRepository.class);
 				Person myPerson = new Person("John", "Doe");
 				personRepository.save(myPerson);
 	}
